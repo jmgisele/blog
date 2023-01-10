@@ -70,11 +70,10 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    min-height: 100vh;
   }
 
-  .main-text {
-    width: 80%;
+  .main-body {
+    padding: 2rem 2rem;
   }
 
   #posts-header {

@@ -1,144 +1,151 @@
-@import "./catppuccin.css";
+@import './catppuccin.css';
 
 .light-theme {
-  --rosewater: var(--ctp-latte-rosewater);
-  --flamingo: var(--ctp-latte-flamingo);
-  --pink: var(--ctp-latte-pink);
-  --mauve: var(--ctp-latte-mauve);
-  --red: var(--ctp-latte-red);
-  --maroon: var(--ctp-latte-maroon);
-  --peach: var(--ctp-latte-peach);
-  --yellow: var(--ctp-latte-yellow);
-  --green: var(--ctp-latte-green);
-  --teal: var(--ctp-latte-teal);
-  --sky: var(--ctp-latte-sky);
-  --sapphire: var(--ctp-latte-sapphire);
-  --blue: var(--ctp-latte-blue);
-  --lavender: var(--ctp-latte-lavender);
-  --text: var(--ctp-latte-text);
-  --subtext1: var(--ctp-latte-subtext1);
-  --subtext0: var(--ctp-latte-subtext0);
-  --overlay2: var(--ctp-latte-overlay2);
-  --overlay1: var(--ctp-latte-overlay1);
-  --overlay0: var(--ctp-latte-overlay0);
-  --surface2: var(--ctp-latte-surface2);
-  --surface1: var(--ctp-latte-surface1);
-  --surface0: var(--ctp-latte-surface0);
-  --base: var(--ctp-latte-base);
-  --mantle: var(--ctp-latte-mantle);
-  --crust: var(--ctp-latte-crust);
+	--rosewater: var(--ctp-latte-rosewater);
+	--flamingo: var(--ctp-latte-flamingo);
+	--pink: var(--ctp-latte-pink);
+	--mauve: var(--ctp-latte-mauve);
+	--red: var(--ctp-latte-red);
+	--maroon: var(--ctp-latte-maroon);
+	--peach: var(--ctp-latte-peach);
+	--yellow: var(--ctp-latte-yellow);
+	--green: var(--ctp-latte-green);
+	--teal: var(--ctp-latte-teal);
+	--sky: var(--ctp-latte-sky);
+	--sapphire: var(--ctp-latte-sapphire);
+	--blue: var(--ctp-latte-blue);
+	--lavender: var(--ctp-latte-lavender);
+	--text: var(--ctp-latte-text);
+	--subtext1: var(--ctp-latte-subtext1);
+	--subtext0: var(--ctp-latte-subtext0);
+	--overlay2: var(--ctp-latte-overlay2);
+	--overlay1: var(--ctp-latte-overlay1);
+	--overlay0: var(--ctp-latte-overlay0);
+	--surface2: var(--ctp-latte-surface2);
+	--surface1: var(--ctp-latte-surface1);
+	--surface0: var(--ctp-latte-surface0);
+	--base: var(--ctp-latte-base);
+	--mantle: var(--ctp-latte-mantle);
+	--crust: var(--ctp-latte-crust);
 }
 
 .dark-theme {
-  --flamingo: var(--ctp-frappe-flamingo);
-  --rosewater: var(--ctp-frappe-rosewater);
-  --pink: var(--ctp-frappe-pink);
-  --mauve: var(--ctp-frappe-mauve);
-  --red: var(--ctp-frappe-red);
-  --maroon: var(--ctp-frappe-maroon);
-  --peach: var(--ctp-frappe-peach);
-  --yellow: var(--ctp-frappe-yellow);
-  --green: var(--ctp-frappe-green);
-  --teal: var(--ctp-frappe-teal);
-  --sky: var(--ctp-frappe-sky);
-  --sapphire: var(--ctp-frappe-sapphire);
-  --blue: var(--ctp-frappe-blue);
-  --lavender: var(--ctp-frappe-lavender);
-  --text: var(--ctp-frappe-text);
-  --subtext1: var(--ctp-frappe-subtext1);
-  --subtext0: var(--ctp-frappe-subtext0);
-  --overlay2: var(--ctp-frappe-overlay2);
-  --overlay1: var(--ctp-frappe-overlay1);
-  --overlay0: var(--ctp-frappe-overlay0);
-  --surface2: var(--ctp-frappe-surface2);
-  --surface1: var(--ctp-frappe-surface1);
-  --surface0: var(--ctp-frappe-surface0);
-  --base: var(--ctp-frappe-base);
-  --mantle: var(--ctp-frappe-mantle);
-  --crust: var(--ctp-frappe-crust);
+	--flamingo: var(--ctp-frappe-flamingo);
+	--rosewater: var(--ctp-frappe-rosewater);
+	--pink: var(--ctp-frappe-pink);
+	--mauve: var(--ctp-frappe-mauve);
+	--red: var(--ctp-frappe-red);
+	--maroon: var(--ctp-frappe-maroon);
+	--peach: var(--ctp-frappe-peach);
+	--yellow: var(--ctp-frappe-yellow);
+	--green: var(--ctp-frappe-green);
+	--teal: var(--ctp-frappe-teal);
+	--sky: var(--ctp-frappe-sky);
+	--sapphire: var(--ctp-frappe-sapphire);
+	--blue: var(--ctp-frappe-blue);
+	--lavender: var(--ctp-frappe-lavender);
+	--text: var(--ctp-frappe-text);
+	--subtext1: var(--ctp-frappe-subtext1);
+	--subtext0: var(--ctp-frappe-subtext0);
+	--overlay2: var(--ctp-frappe-overlay2);
+	--overlay1: var(--ctp-frappe-overlay1);
+	--overlay0: var(--ctp-frappe-overlay0);
+	--surface2: var(--ctp-frappe-surface2);
+	--surface1: var(--ctp-frappe-surface1);
+	--surface0: var(--ctp-frappe-surface0);
+	--base: var(--ctp-frappe-base);
+	--mantle: var(--ctp-frappe-mantle);
+	--crust: var(--ctp-frappe-crust);
 }
 
 :root {
-  font-size: 20px;
+	font-size: 20px;
 }
 
 @media screen and (max-width: 768px) {
-  :root {
-    font-size: 18px;
-  }
+	:root {
+		font-size: 18px;
+	}
 }
 
 @media screen and (max-width: 480px) {
-  :root {
-    font-size: 16px;
-  }
+	:root {
+		font-size: 16px;
+	}
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
 }
 
 a:link {
-  color: var(--blue);
+	color: var(--blue);
 } /* normal link */
 a:visited {
-  color: var(--mauve);
+	color: var(--mauve);
 } /* visited link */
 a:active {
-  color: var(--pink);
+	color: var(--pink);
 } /* clicked link */
 a:hover {
-  color: var(--rosewater);
+	color: var(--rosewater);
 } /* mouse over link */
 
 h1 {
-  font-size: 2.4rem;
-  color: var(--flamingo);
+	font-size: 2.4rem;
+	color: var(--flamingo);
 }
 
 h2 {
-  font-size: 1.8rem;
-  color: var(--pink);
+	font-size: 1.8rem;
+	color: var(--pink);
 }
 
 h3 {
-  font-size: 1.6rem;
-  color: var(--blue);
+	font-size: 1.6rem;
+	color: var(--blue);
 }
 
 h4 {
-  font-size: 1.4rem;
-  color: var(--sapphire);
+	font-size: 1.4rem;
+	color: var(--sapphire);
 }
 
 h5 {
-  font-size: 1.2rem;
-  color: var(--green);
+	font-size: 1.2rem;
+	color: var(--green);
 }
 
 p {
-  font-size: 1rem;
-  color: var(--teal);
+	font-size: 1rem;
+	color: var(--teal);
 }
 
 li {
-  color: var(--lavender);
+	color: var(--lavender);
 }
 
 .body-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-  width: 100vw;
-  background-color: var(--base);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-height: 100vh;
+	width: 100%;
+	background-color: var(--base);
 }
 
 .main-body {
-  margin: 1rem;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  background-color: var(--mantle);
-  width: 100%;
-  max-width: 56rem;
-  padding: 1ch;
+	box-sizing: border-box;
+	margin: 1rem;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	background-color: var(--mantle);
+	width: 100%;
+	max-width: min(100vw, 56rem);
 }
 
 .list-star {
-  color: red;
+	color: red;
 }

@@ -30,8 +30,8 @@
     <a href="/">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="30"
-        height="30"
+        width="38"
+        height="38"
         fill="currentColor"
         class="bi bi-box-arrow-up-left"
         viewBox="0 0 16 16"
@@ -53,6 +53,10 @@
 </div>
 
 <style>
+  .main-body {
+    padding: 1rem;
+
+  }
   .blog-body {
     padding: 0 2em;
   }
