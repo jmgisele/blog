@@ -1,4 +1,5 @@
 <script>
+
   import { onMount } from "svelte";
   import { page } from "$app/stores";
 
@@ -6,7 +7,7 @@
   let Main;
 
   onMount(async () => {
-    Main = (await import(`../../../entries/${entry_filename}.svelte`)).default;
+      Main = (await import(`../../../entries/${entry_filename}.svelte`)).default;
   });
 </script>
 
