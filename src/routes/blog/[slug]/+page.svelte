@@ -1,7 +1,6 @@
 <script>
   import { onMount } from "svelte";
   import { page } from "$app/stores";
-  import BlogLayout from "./blog_layout.svelte";
 
   let entry_filename = $page.params.slug;
   let Main;
@@ -11,4 +10,4 @@
   });
 </script>
 
-<BlogLayout mainContent={Main} />
+<svelte:component this={Main} />
