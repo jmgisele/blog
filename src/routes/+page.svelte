@@ -2,10 +2,7 @@
 	import ThemeToggle from '../lib/ThemeToggle.svelte';
 	import { theme, toggleTheme } from '../stores/global_theme';
 
-	import { metadata } from '../metadata/blog_entries';
-	let entries = metadata.blog_entries.sort((a, b) => {
-		return new Date(a.published) < new Date(b.published) ? 1 : -1;
-	});
+	export let data;
 </script>
 
 <div class="body-wrapper {$theme}">
@@ -22,7 +19,7 @@
 		<h2 id="posts-header">Posts</h2>
 		<div class="all-posts">
 			<ul>
-				{#each entries as entry}
+				{#each data.entries as entry}
 					<li class="li-box">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
