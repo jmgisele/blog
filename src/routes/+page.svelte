@@ -1,9 +1,7 @@
 <script>
 	import ThemeToggle from '../lib/ThemeToggle.svelte';
-	import { metadata } from '../metadata/blog_entries';
 	import { theme, toggleTheme } from '../stores/global_theme';
-
-	let entries = metadata.blog_entries;
+	export let data;
 </script>
 
 <div class="body-wrapper {$theme}">
@@ -20,7 +18,7 @@
 		<h2 id="posts-header">Posts</h2>
 		<div class="all-posts">
 			<ul>
-				{#each entries.reverse() as entry}
+				{#each data.entries as entry}
 					<li class="li-box">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
