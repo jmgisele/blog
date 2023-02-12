@@ -1,0 +1,163 @@
+/* 
+https://github.com/catppuccin/highlightjs 
+modified a bit & grabbed for svelte 
+*/
+
+@import './theme.css';
+
+/* this adds inline and p styling */
+span.hljs,
+p.hljs {
+	color: var(--text);
+	font-family: monospace;
+	background: var(--surface0);
+	padding: 0px 5px;
+}
+
+p.hljs {
+	padding: 20px;
+}
+
+code.hljs {
+	color: var(--text);
+	background: var(--surface0);
+}
+
+code .hljs-keyword {
+	color: var(--mauve);
+}
+code .hljs-built_in {
+	color: var(--red);
+}
+code .hljs-type {
+	color: var(--yellow);
+}
+code .hljs-literal {
+	color: var(--peach);
+}
+code .hljs-number {
+	color: var(--peach);
+}
+code .hljs-operator {
+	color: var(--teal);
+}
+code .hljs-punctuation {
+	color: #b5bfe2;
+}
+code .hljs-property {
+	color: var(--teal);
+}
+code .hljs-regexp {
+	color: var(--pink);
+}
+code .hljs-string {
+	color: var(--green);
+}
+code .hljs-char.escape_ {
+	color: var(--green);
+}
+code .hljs-subst {
+	color: #a5adce;
+}
+code .hljs-symbol {
+	color: var(--flamingo);
+}
+code .hljs-variable {
+	color: var(--mauve);
+}
+code .hljs-variable.language_ {
+	color: var(--mauve);
+}
+code .hljs-variable.constant_ {
+	color: var(--peach);
+}
+code .hljs-title {
+	color: var(--blue);
+}
+code .hljs-title.class_ {
+	color: var(--yellow);
+}
+code .hljs-title.function_ {
+	color: var(--blue);
+}
+code .hljs-params {
+	color: var(--text);
+}
+code .hljs-comment {
+	color: #626880;
+}
+code .hljs-doctag {
+	color: var(--red);
+}
+code .hljs-meta {
+	color: var(--peach);
+}
+code .hljs-section {
+	color: var(--blue);
+}
+code .hljs-tag {
+	color: #a5adce;
+}
+code .hljs-name {
+	color: var(--mauve);
+}
+code .hljs-attr {
+	color: var(--blue);
+}
+code .hljs-attribute {
+	color: var(--green);
+}
+code .hljs-bullet {
+	color: var(--teal);
+}
+code .hljs-code {
+	color: var(--green);
+}
+code .hljs-emphasis {
+	color: var(--red);
+	font-style: italic;
+}
+code .hljs-strong {
+	color: var(--red);
+	font-weight: bold;
+}
+code .hljs-formula {
+	color: var(--teal);
+}
+code .hljs-link {
+	color: #85c1dc;
+	font-style: italic;
+}
+code .hljs-quote {
+	color: var(--green);
+	font-style: italic;
+}
+code .hljs-selector-tag {
+	color: var(--yellow);
+}
+code .hljs-selector-id {
+	color: var(--blue);
+}
+code .hljs-selector-class {
+	color: var(--teal);
+}
+code .hljs-selector-attr {
+	color: var(--mauve);
+}
+code .hljs-selector-pseudo {
+	color: var(--teal);
+}
+code .hljs-template-tag {
+	color: var(--flamingo);
+}
+code .hljs-template-variable {
+	color: var(--flamingo);
+}
+code .hljs-diff-addition {
+	color: var(--green);
+	background: rgba(var(--ctp-green), 15%);
+}
+code .hljs-diff-deletion {
+	color: var(--red);
+	background: rgba(var(--ctp-red), 15%);
+}
