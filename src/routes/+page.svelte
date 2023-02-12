@@ -1,6 +1,11 @@
 <script>
 	import ThemeToggle from '../lib/ThemeToggle.svelte';
 	import { theme, toggleTheme } from '../stores/global_theme';
+
+	import { metadata } from '../metadata/blog_entries';
+	let entries = metadata.blog_entries.sort((a, b) => {
+		return new Date(a.published) < new Date(b.published) ? 1 : -1;
+	});
 	export let data;
 </script>
 
