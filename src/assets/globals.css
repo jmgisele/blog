@@ -3,18 +3,18 @@
 @import './theme.css';
 
 :root {
-	font-size: 20px;
+	font-size: 18px;
 }
 
 @media screen and (max-width: 768px) {
 	:root {
-		font-size: 18px;
+		font-size: 16px;
 	}
 }
 
 @media screen and (max-width: 480px) {
 	:root {
-		font-size: 16px;
+		font-size: 15px;
 	}
 }
 
@@ -38,6 +38,23 @@ a:hover {
 	color: var(--rosewater);
 } /* mouse over link */
 
+b {
+	color: var(--teal);
+}
+
+i {
+	color: var(--blue);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 1em 0em;
+}
+
 h1 {
 	font-size: 2.4rem;
 	color: var(--flamingo);
@@ -58,14 +75,19 @@ h4 {
 	color: var(--sapphire);
 }
 
-h5 {
+h5,
+h5 i {
 	font-size: 1.2rem;
 	color: var(--green);
 }
 
+h6 {
+	font-size: 1rem;
+	color: var(--pink);
+}
 p {
 	font-size: 1rem;
-	color: var(--teal);
+	color: var(--text);
 	line-height: 1.5;
 }
 
@@ -75,6 +97,46 @@ span {
 
 li {
 	color: var(--lavender);
+	margin-bottom: 7px;
+}
+
+blockquote {
+	color: var(--flamingo);
+}
+
+details {
+	margin: 0 10px;
+	padding: 20px;
+	color: var(--teal);
+	background-color: var(--surface0);
+}
+
+details p {
+	margin-left: 30px;
+}
+
+span.footnote,
+a.footnote,
+.footnote > p > a:first-child {
+	color: var(--red);
+	font-weight: bolder;
+	position: relative;
+	bottom: 0.5ex;
+	text-decoration: none;
+}
+
+.footnote {
+	margin-top: 100px;
+}
+
+.footnote p {
+	color: var(--teal);
+}
+
+.footnote b {
+	color: var(--red);
+
+	margin-right: 5px;
 }
 
 .body-wrapper {
@@ -101,4 +163,15 @@ li {
 
 .strikethrough {
 	text-decoration: line-through;
+}
+
+.center-flex {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.anchor {
+	position: absolute;
+	transform: translateY(-50vh);
 }

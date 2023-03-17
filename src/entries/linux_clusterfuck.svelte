@@ -82,7 +82,11 @@ WantedBy=suspend.target`;
 	with the devil that is NVIDIA Optimus.
 </p>
 <div class="center-flex">
-	<img src={nvidia_meme} alt="" id="meme" />
+	<img
+		src={nvidia_meme}
+		alt="the TRADE OFFER meme. i receive: approximately one grand; you receive: a steady stream of GPU bugs. bottom text: nvidia optimus babey"
+		id="meme"
+	/>
 </div>
 <p>
 	For those not familiar, <a href="https://en.wikipedia.org/wiki/Nvidia_Optimus">NVIDIA Optimus</a> is
@@ -358,12 +362,6 @@ WantedBy=suspend.target`;
 </p>
 
 <style>
-	.center-flex {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
-
 	#meme {
 		max-height: 500px;
 	}
