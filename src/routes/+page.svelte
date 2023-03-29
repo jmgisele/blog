@@ -2,6 +2,8 @@
 	import ThemeToggle from '../lib/ThemeToggle.svelte';
 	import { theme, toggleTheme } from '../stores/global_theme';
 
+	import { base } from '$app/paths';
+
 	export let data;
 </script>
 
@@ -36,7 +38,7 @@
 						<span class="entry-spacer"> {`  `}</span>
 						<span>{new Date(entry.published).toDateString()}</span>
 						<span class="entry-spacer"> {`    `}</span>
-						<a href={`/blog/${entry.slug}`} class="entry-title">{entry.title}</a>
+						<a href={`${base}/blog/${entry.slug}`} class="entry-title">{entry.title}</a>
 					</li>
 				{/each}
 			</ul>
