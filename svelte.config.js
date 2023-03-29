@@ -8,7 +8,7 @@ const config = {
 	kit: {
 		adapter: adapter({ out: 'build', fallback: 'error.html', precompress: false, strict: true }),
 		paths: {
-			base: dev ? '' : '/'
+			base: dev ? '' : '' // change me if switching to gh
 		}
 	}
 };
