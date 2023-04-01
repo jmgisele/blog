@@ -1,8 +1,5 @@
 <script>
-	import clipboard from '../../assets/icons/clipboard.svg';
-	import clipboardCheck from '../../assets/icons/clipboard-check.svg';
 	import { onMount } from 'svelte';
-	import RainbowOutline from './RainbowOutline.svelte';
 
 	let tappedTwice = false;
 	let isClicked = false;
@@ -16,7 +13,6 @@
 	};
 
 	const touched = (e) => {
-		// document.getElementById(id).style.visibility = 'visible';
 		if (!tappedTwice) {
 			tappedTwice = true;
 			setTimeout(function () {
@@ -29,15 +25,15 @@
 		navigator.clipboard.writeText(textToCopy);
 	};
 
-	const touchEnd = (e) => {
-		// document.getElementById(id).style.visibility = 'hidden';
-	};
-
 	const reset = () => {
+		document.getElementById(id).style.visibility = 'hidden';
 		isClicked = false;
 	};
 
 	onMount(() => {
+		// for various reasons this ended up being the best bet among the options
+		// of a sveltier solution, pure css, and a hodgepodge of vanilla and svelte (the option i took)
+		// maybe one day i'll go back and clean all this up lol it's not super pretty
 		const el = document.getElementById(id);
 
 		let toolRect = el.getBoundingClientRect();
@@ -55,7 +51,6 @@
 	export let textToCopy;
 	export let tooltipText;
 	export let id;
-	export let icon;
 </script>
 
 <button
@@ -63,7 +58,8 @@
 	on:click={(e) => clicked(e)}
 	on:keypress={(e) => clicked(e)}
 	on:touchstart={(e) => touched(e)}
-	on:touchend={(e) => touchEnd(e)}
+	on:focusin={() => (document.getElementById(id).style.visibility = 'visible')}
+	on:mouseenter={() => (document.getElementById(id).style.visibility = 'visible')}
 	on:mouseleave={reset}
 	on:focusout={reset}
 	tabindex="0"
@@ -72,14 +68,46 @@
 		{tooltipText} <br />
 		<span>
 			{#if isClicked}
-				<img src={clipboardCheck} alt="" tabindex="-1" />
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="16"
+					height="16"
+					fill="currentColor"
+					class="bi bi-clipboard-check"
+					viewBox="0 0 16 16"
+				>
+					<path
+						fill-rule="evenodd"
+						d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"
+					/>
+					<path
+						d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"
+					/>
+					<path
+						d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"
+					/>
+				</svg>
 			{:else}
 				double click!
-				<img src={clipboard} alt="" tabindex="-1" />
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="16"
+					height="16"
+					fill="currentColor"
+					class="bi bi-clipboard"
+					viewBox="0 0 16 16"
+				>
+					<path
+						d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"
+					/>
+					<path
+						d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"
+					/>
+				</svg>
 			{/if}
 		</span>
 	</div>
-	<img src={icon} alt="" class="icon" id="{id}-icon" width="30" height="30" tabindex="-1" />
+	<slot />
 </button>
 
 <style>
@@ -98,12 +126,11 @@
 		margin: 5px;
 	}
 
-	.tooltip img {
+	.tooltip svg {
 		display: inline-block;
 		position: relative;
 		height: 1rem;
 		line-height: 1rem;
-		top: 6px;
 	}
 
 	.tooltip {
@@ -128,12 +155,8 @@
 		margin: 5px;
 	}
 
-	button:focus .tooltip,
-	button:hover .tooltip {
-		visibility: visible;
-	}
-
 	/* rainbow */
+
 	button.rainbow,
 	*:before,
 	*:after {
