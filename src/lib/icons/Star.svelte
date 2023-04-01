@@ -13,8 +13,8 @@
 
 <style>
 	.list-star {
+		position: relative;
+		top: 8px;
 		color: var(--flamingo);
-		padding-right: 0.5rem;
-		padding-top: 0.5rem;
 	}
 </style>
