@@ -81,7 +81,7 @@ WantedBy=suspend.target`;
 	Anyone that's bought a budget gaming/creative laptop in the past ~5 years has signed the contract
 	with the devil that is NVIDIA Optimus.
 </p>
-<div class="center-flex">
+<div class="center-image-flex">
 	<img
 		src={nvidia_meme}
 		alt="the TRADE OFFER meme. i receive: approximately one grand; you receive: a steady stream of GPU bugs. bottom text: nvidia optimus babey"

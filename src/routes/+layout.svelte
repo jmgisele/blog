@@ -1,5 +1,5 @@
 <script>
-	import '../assets/globals.css';
+	import '../assets/css/globals.css';
 </script>
 
 <slot />

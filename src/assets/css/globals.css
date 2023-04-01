@@ -1,0 +1,7 @@
+@import './theme/reset.css';
+@import './theme/catppuccin.css';
+@import './theme/catppuccin-frappe-highlight-js.css';
+@import './theme/theme.css';
+@import './media-queries.css';
+@import './selector-styling.css';
+@import './global-classes.css';

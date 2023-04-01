@@ -1,0 +1,101 @@
+* {
+	box-sizing: border-box;
+}
+a:link {
+	color: var(--blue);
+} /* normal link */
+a:visited {
+	color: var(--mauve);
+} /* visited link */
+a:active {
+	color: var(--pink);
+} /* clicked link */
+a:hover {
+	color: var(--rosewater);
+} /* mouse over link */
+
+b {
+	color: var(--teal);
+}
+
+i {
+	color: var(--blue);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 1em 0em;
+}
+
+h1 {
+	font-size: 2rem;
+	color: var(--flamingo);
+}
+
+h2 {
+	font-size: 1.8rem;
+	color: var(--pink);
+}
+
+h3 {
+	font-size: 1.6rem;
+	color: var(--blue);
+}
+
+h4 {
+	font-size: 1.4rem;
+	color: var(--sapphire);
+}
+
+h5,
+h5 i {
+	font-size: 1.2rem;
+	color: var(--green);
+}
+
+h6 {
+	font-size: 1rem;
+	color: var(--pink);
+}
+
+p {
+	font-size: 1rem;
+	color: var(--text);
+	line-height: 1.5;
+}
+
+div {
+	color: var(--text);
+}
+
+span {
+	line-height: 1.5;
+}
+
+li {
+	color: var(--lavender);
+	margin-bottom: 7px;
+}
+
+blockquote {
+	color: var(--flamingo);
+}
+
+details {
+	margin: 0 10px;
+	padding: 20px;
+	color: var(--teal);
+	background-color: var(--surface0);
+}
+
+details p {
+	margin-left: 30px;
+}
+
+hr {
+	color: var(--surface0);
+}
