@@ -5,7 +5,6 @@
 	import Star from '../lib/icons/Star.svelte';
 	import IconFooter from '../lib/icons/IconFooter.svelte';
 	import RainbowLink from '../lib/text_styling/RainbowLink.svelte';
-	import RainbowOutline from '../lib/text_styling/RainbowOutline.svelte';
 
 	export let data;
 </script>

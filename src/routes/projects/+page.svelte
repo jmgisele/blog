@@ -3,8 +3,8 @@
 	import BodyWrapper from '../../lib/wrappers/BodyWrapper.svelte';
 </script>
 
-<BasicWrapper navbar="true">
-	<BodyWrapper>
+<BasicWrapper>
+	<BodyWrapper navbar="true" bottomLinks="true">
 		<h1>Projects</h1>
 		<h3>Double Slit Simulator</h3>
 		<p>lorem ipsum</p>

@@ -3,8 +3,8 @@
 	import BodyWrapper from '../../lib/wrappers/BodyWrapper.svelte';
 </script>
 
-<BasicWrapper navbar="true">
-	<BodyWrapper>
+<BasicWrapper>
+	<BodyWrapper navbar="true" bottomLinks="true">
 		<h1>coming soon</h1>
 	</BodyWrapper>
 </BasicWrapper>

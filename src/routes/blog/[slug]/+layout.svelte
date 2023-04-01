@@ -4,7 +4,7 @@
 </script>
 
 <BasicWrapper>
-	<BodyWrapper>
+	<BodyWrapper bottomLinks="true">
 		<slot />
 	</BodyWrapper>
 </BasicWrapper>

@@ -3,10 +3,10 @@
 	import ThemeToggle from '../icons/ThemeToggle.svelte';
 	import BackArrow from '../icons/BackArrow.svelte';
 	import Navbar from '../navigation/Navbar.svelte';
+	import IconFooter from '../icons/IconFooter.svelte';
 
 	export let backArrow = true;
 	export let body_id = '';
-	export let navbar = false;
 </script>
 
 <div class="body-wrapper {$theme}">
@@ -15,12 +15,6 @@
 
 		{#if backArrow}
 			<BackArrow />
-		{/if}
-		{#if navbar}
-			<div class="nav-container">
-				<Navbar />
-			</div>
-			<hr />
 		{/if}
 
 		<slot />
@@ -45,20 +39,6 @@
 		background-color: var(--mantle);
 		width: 100%;
 		max-width: min(100vw, 56rem);
-	}
-
-	.nav-container {
-		display: flex;
-		flex-direction: row;
-		justify-content: flex-end;
-		width: 100%;
-	}
-
-	@media screen and (max-width: 768px) {
-		.nav-container {
-			flex-direction: column;
-			align-items: flex-end;
-		}
 	}
 
 	#home-body {
