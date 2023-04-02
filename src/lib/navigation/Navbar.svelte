@@ -6,7 +6,7 @@
 	<a href={`${base}/`}>Feed</a>
 	<a href={`${base}/projects`}>Projects</a>
 	<a href={`${base}/resume`}>Resume</a>
-	<a href={`${base}/trivia`}>About Me</a>
+	<a href={`${base}/thoughts`}>Thoughts</a>
 </nav>
 
 <style>

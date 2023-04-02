@@ -6,7 +6,7 @@
 <ul>
 	<li>
 		<RainbowLink
-			href="https://www.blog.jamesgisele.com/blog/rss"
+			href="/blog/rss"
 			add_class="external-links"
 			target="_blank"
 			rel="noopener noreferrer"

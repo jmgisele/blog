@@ -3,9 +3,9 @@
 	import BodyWrapper from '../../lib/wrappers/BodyWrapper.svelte';
 </script>
 
-<BasicWrapper navbar="true">
-	<BodyWrapper>
-		<h1>coming soon</h1>
+<BasicWrapper>
+	<BodyWrapper navbar="true" bottomLinks="true">
+		<h1>coming soon (guess i haven't had any yet. . .)</h1>
 	</BodyWrapper>
 </BasicWrapper>
 
