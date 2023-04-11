@@ -401,25 +401,31 @@
 <ul>
 	<li>
 		<h6>javidx9</h6>
-		the original <RainbowLink href="https://www.youtube.com/watch?v=ih20l3pJoeU&t=1667s"
-			>javidx9</RainbowLink
-		> series that got me started. all his videos are really great!
+		<p>
+			the original <RainbowLink href="https://www.youtube.com/watch?v=ih20l3pJoeU&t=1667s"
+				>javidx9</RainbowLink
+			> series that got me started. all his videos are really great!
+		</p>
 	</li>
 	<li>
 		<h6>Computer Graphics From Scratch</h6>
-		alternately - <RainbowLink
-			href="https://www.gabrielgambetta.com/computer-graphics-from-scratch/"
-			>Computer Graphics From Scratch</RainbowLink
-		> I've heard great things about, and it covers largely the same material, if you're more of a books
-		learner than a videos learner. It's in pseudocode which saves you the stress if you (like me) don't
-		know C++, don't currently want to, and are struggling through C-dialect-heavy graphics resources.
+		<p>
+			alternately - <RainbowLink
+				href="https://www.gabrielgambetta.com/computer-graphics-from-scratch/"
+				>Computer Graphics From Scratch</RainbowLink
+			> I've heard great things about, and it covers largely the same material, if you're more of a books
+			learner than a videos learner. It's in pseudocode which saves you the stress if you (like me) don't
+			know C++, don't currently want to, and are struggling through C-dialect-heavy graphics resources.
+		</p>
 	</li>
 	<li>
 		<h6>math refresh - 3blue1brown's linear algebra</h6>
-		for a linear algebra refresh - 3blue1brown's linear algebra <RainbowLink
-			href="https://www.youtube.com/watch?v=kjBOesZCoqc&list=PL0-GT3co4r2y2YErbmuJw2L5tW4Ew2O5B"
-			>series</RainbowLink
-		> is hard to beat.
+		<p>
+			for a linear algebra refresh - 3blue1brown's linear algebra <RainbowLink
+				href="https://www.youtube.com/watch?v=kjBOesZCoqc&list=PL0-GT3co4r2y2YErbmuJw2L5tW4Ew2O5B"
+				>series</RainbowLink
+			> is hard to beat.
+		</p>
 	</li>
 	<li>
 		<h6>shader school</h6>
@@ -496,7 +502,8 @@
 
 <style>
 	.button-container {
-		width: 300px;
+		width: 100%;
+		max-width: 300px;
 	}
 
 	.wasm-container {

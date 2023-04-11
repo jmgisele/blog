@@ -30,8 +30,7 @@
 		document.getElementById(id).style.visibility = 'hidden';
 		isClicked = false;
 	};
-
-	onMount(() => {
+	let tooltipPositioner = () => {
 		const tooltips = document.querySelectorAll('.tooltip');
 
 		tooltips.forEach((tip) => {
@@ -48,6 +47,14 @@
 				});
 			});
 		});
+	};
+
+	onMount(() => {
+		tooltipPositioner();
+		window.addEventListener('resize', tooltipPositioner);
+		return () => {
+			window.removeEventListener('resize', tooltipPositioner);
+		};
 	});
 
 	export let addedClasses = '';
