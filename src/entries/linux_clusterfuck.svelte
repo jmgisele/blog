@@ -236,7 +236,8 @@ WantedBy=suspend.target`;
 	<span class="hljs">acpid</span> with exactly two stars on Gitlab, one of which is from me,
 	yesterday, at about 3am. The first small mercy is that <span class="hljs">user-acpid</span> is
 	small, just a single file. The second is it's written in extremely readable fashion in
-	<b>Rust</b>, which I've been spending the last few weeks at <a href="www.recurse.com">Recurse</a>
+	<b>Rust</b>, which I've been spending the last few weeks at
+	<a href="https://www.recurse.com">Recurse</a>
 	picking up.
 </p>
 <p>
