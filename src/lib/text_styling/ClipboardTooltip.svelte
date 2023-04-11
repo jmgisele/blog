@@ -1,4 +1,5 @@
 <script>
+	import { computePosition, flip, shift } from '@floating-ui/dom';
 	import { onMount } from 'svelte';
 
 	let tappedTwice = false;
@@ -31,20 +32,22 @@
 	};
 
 	onMount(() => {
-		// for various reasons this ended up being the best bet among the options
-		// of a sveltier solution, pure css, and a hodgepodge of vanilla and svelte (the option i took)
-		// maybe one day i'll go back and clean all this up lol it's not super pretty
-		const el = document.getElementById(id);
+		const tooltips = document.querySelectorAll('.tooltip');
 
-		let toolRect = el.getBoundingClientRect();
-		let iconRect = document.getElementById(`${id}-icon`).getBoundingClientRect();
+		tooltips.forEach((tip) => {
+			let tooltip = document.getElementById(tip.id);
+			let icon = document.getElementById(`${tip.id}-icon`);
 
-		let tipX = iconRect.width / 2 + 5;
-
-		if (toolRect.right > window.innerWidth) {
-			tipX += 2 * (toolRect.width - window.innerWidth);
-		}
-		el.style.left = tipX + 'px';
+			computePosition(icon, tooltip, {
+				placement: 'bottom',
+				middleware: [flip(), shift()]
+			}).then(({ x, y }) => {
+				Object.assign(tooltip.style, {
+					left: `${x}px`,
+					top: `${y}px`
+				});
+			});
+		});
 	});
 
 	export let addedClasses = '';
@@ -134,14 +137,15 @@
 	}
 
 	.tooltip {
+		width: max-content;
+		position: absolute;
+		top: 0;
+		left: 0;
 		z-index: 1;
 		box-sizing: border-box;
-		position: absolute;
 		visibility: hidden;
 		background-color: var(--crust);
 		border: 1px solid var(--green);
-		width: fit-content;
-		height: fit-content;
 		padding: 10px;
 		margin: 0px;
 		line-height: 1rem;

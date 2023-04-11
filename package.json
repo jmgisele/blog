@@ -25,6 +25,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@floating-ui/dom": "^1.2.5",
 		"@sveltejs/adapter-static": "^2.0.1"
 	}
 }

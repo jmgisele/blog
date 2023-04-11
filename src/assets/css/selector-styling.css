@@ -1,6 +1,7 @@
 * {
 	box-sizing: border-box;
 }
+
 a:link {
 	color: var(--blue);
 } /* normal link */

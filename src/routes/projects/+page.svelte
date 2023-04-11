@@ -1,4 +1,7 @@
 <script>
+	import { base } from '$app/paths';
+
+	import RainbowLink from '../../lib/text_styling/RainbowLink.svelte';
 	import BasicWrapper from '../../lib/wrappers/BasicWrapper.svelte';
 	import BodyWrapper from '../../lib/wrappers/BodyWrapper.svelte';
 </script>
@@ -9,7 +12,11 @@
 		<h3>Double Slit Simulator</h3>
 		<p>lorem ipsum</p>
 		<h3>Rust Graphics Engine</h3>
-		<p>lorem ipsum</p>
+		<p>
+			You can check out my writeup <RainbowLink href={`${base}/blog/software_renderer`}
+				>here!</RainbowLink
+			>
+		</p>
 		<h3>(Old) YelpCamp</h3>
 		<p>lorem ipsum</p>
 	</BodyWrapper>
