@@ -229,7 +229,7 @@
 	relative to this coordinate system. I promise it makes more sense with the math!
 </p>
 <p>
-	So this is great. Except....Things look a little flat, don't they? Every face of the triangle is
+	So this is great. Except....Things look a little flat, don't they? Every face of the cube is
 	shaded the same. In the real world, things look a little more dimensional. To get that dimension
 	from our engine, we'll have to add in some
 </p>
@@ -295,7 +295,7 @@
 <p>
 	A lot better. There's still one triangle on the right wing with the issue mentioned above, where
 	half the triangle should be rendered "above" and the other half "below" another triangle; but this
-	is looking a lot bigger.
+	is looking a lot better.
 </p>
 <p>Let's take a closer look, to make sure everything is actually working as intended.</p>
 <div class="center-image-flex">
