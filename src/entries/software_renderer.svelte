@@ -32,7 +32,7 @@
 </script>
 
 <h1>Child's Play: Writing a Software Renderer in Rust</h1>
-<h2>04 April 2023</h2>
+<h2>11 April 2023</h2>
 <h3>It's not actually that hard!</h3>
 <h5>
 	(tldr check out my <RainbowLink href="#list">list</RainbowLink> of vetted introductory graphics resources)

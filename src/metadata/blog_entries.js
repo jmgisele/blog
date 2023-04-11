@@ -16,7 +16,7 @@ export const metadata = {
 			slug: 'software_renderer',
 			title: "Child's Play: Writing a Software Renderer in Rust",
 			description: "It's not actually that hard!",
-			published: 'April 04, 2023 00:00:00'
+			published: 'April 11, 2023 00:00:00'
 		}
 	]
 };
