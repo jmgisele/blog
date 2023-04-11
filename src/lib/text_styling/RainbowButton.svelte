@@ -1,36 +1,45 @@
 <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-<div class="rainbow" tabindex="0">
+<button class="rainbow" tabindex="0" on:click on:keypress>
 	<slot />
-</div>
+</button>
 
 <style>
+	button.rainbow {
+		background-color: var(--surface0);
+		outline: none;
+		color: var(--yellow);
+		border: 2px solid var(--surface1);
+		border-radius: 3px;
+		font-weight: bold;
+	}
+
 	/* rainbow link styling */
-	div.rainbow,
+	.rainbow,
 	*:before,
 	*:after {
 		position: relative;
 		outline: none;
 	}
 
-	div.rainbow::before {
+	.rainbow::before {
 		content: '';
 		position: absolute;
 		visibility: hidden;
 		width: 0%;
 		height: 2px;
-		bottom: -5px;
+		bottom: -8px;
 		left: 0;
 	}
 
-	div.rainbow:hover::before,
-	div.rainbow:focus::before {
+	.rainbow:hover::before,
+	.rainbow:focus::before {
 		visibility: visible;
 		width: 100%;
 		transition: visibility, width 0.5s ease-out;
 	}
 
-	div.rainbow:hover::before,
-	div.rainbow:focus::before {
+	.rainbow:hover::before,
+	.rainbow:focus::before {
 		background: linear-gradient(
 			315deg,
 			var(--rosewater) 0%,

@@ -74,7 +74,7 @@
 		visibility: hidden;
 		width: 0%;
 		height: 2px;
-		bottom: -5px;
+		bottom: -3px;
 		left: 0;
 	}
 
