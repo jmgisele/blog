@@ -49,8 +49,11 @@
 	(an X11 WM) just to get
 	<RainbowLink href="https://nannou.cc/">nannou</RainbowLink>
 	running at all. Aand the part where I still can't get
-	<RainbowLink href="https://www.w3.org/TR/webgpu/">WebGPU</RainbowLink>, the very new browser
-	graphics API, working in Firefox Nightly or Chrome Canary on Arch (taking advice on this one!).
+	<RainbowLink href="https://www.w3.org/TR/webgpu/">WebGPU</RainbowLink>, the shiny new browser
+	graphics API, working in Firefox Nightly or Chrome Canary on Arch.<a
+		class="footnote"
+		href="#webgpu">^</a
+	><span class="anchor" id="webgpu-note" />
 </p>
 <p>
 	But we're not here to talk about any of that today! Instead, I'll bring you back with me to late
@@ -186,10 +189,10 @@
 	> but polygon-based rendering is extremely common.
 </p>
 <p>
-	So, you've got a list of triangles representing a shape (say, a cube) and you'd like them to show
-	up on a screen and resemble that shape (say, a cube). Unfortunately for you, the cube is
-	represented in three-dimensional space (it's a cube, not a square!) and your screen is
-	two-dimensional. So, we
+	So, you've got a list of triangles representing a shape (say, a cube), stored in an .obj file as a
+	simple list of vertices and faces. And you'd like them to show up on a screen and resemble that
+	shape (say, a cube). Unfortunately for you, the cube is represented in three-dimensional space
+	(it's a cube, not a square!) and your screen is two-dimensional. So, we
 </p>
 <h4>project to 2D</h4>
 <div class="center-image-flex">
@@ -265,7 +268,7 @@
 <p>
 	Alright alright. So our light source is definitely working. But clearly we've got some new
 	problems. If we take a look at the wings of our spaceship, you see all sorts of chaos. There are a
-	few things happening here, so we'll take them one at a time.
+	few things still off about this engine, so we'll take them one at a time.
 </p>
 <h4>z-buffer ordering</h4>
 <p>
@@ -278,8 +281,9 @@
 </p>
 <p>
 	Z-buffer ordering algorithms in modern GPUs have to be relatively sophisticated (consider if
-	triangle A is "in front" of half of triangle B, but "behind" the other half?), but for now we'll
-	stick with ordering by a simple average of Z-values. This gets us something a lot nicer looking:
+	triangle A is "in front" of half of triangle B, but "behind" the other half of it?), but for now
+	we'll stick with ordering by a simple average of Z-values. This gets us something a lot nicer
+	looking:
 </p>
 <div class="center-image-flex">
 	<img
@@ -305,25 +309,27 @@
 <h4>clipping</h4>
 <p>
 	So, what's happened here is actually not that complicated, though it's a slightly more
-	sophisticated fix than simply re-ordering our paints.
+	sophisticated fix than simply re-ordering our triangle painting.
 </p>
 <p>
 	The first thing you'll notice with the engine at this point is that it starts sloooowing down as
-	you get closer . One day I'll do a WASM port and update this post so you can see for yourself, but
-	for now, imagine about 1 frame per second update rate.
+	you (the camera) get closer to the polygon. One day I'll do a WASM port and update this post so
+	you can see for yourself, but for now, imagine about 1 frame per second update rate.
 </p>
 <p>
 	When an object goes off screen or gets too close to the camera, the matrix math we're currently
-	using means that the object's coordinates get verrry large. The reason behind this for objects
-	close to the camera is pretty intuitive. Hold your hand up directly in front of your eyes.
+	using means that the object's coordinates get verrry large. For objects close to the camera, the
+	reason behind this is pretty intuitive. Hold your hand up directly in front of your eyes.
 	Hopefully, your hand looks big. Now put your hand behind your head. How big does your hand look?
-	"What kind of question is that," you say, "I can't see it!" Same goes for the view matrix, albeit
-	in a math-ey way - objects too close to or behind the camera have unwanted behavior. In the
-	process of projecting the triangles, you divide by their z distance from the camera. When this z
-	distance gets very small, the numbers get very large, and it's a lot slower to do tons of
-	calculations on very large numbers. (This is where you start to get memory problems in
-	non-memory-safe applications.) Also - why should we even be doing calculations on vertices that
-	are off-screen anyway?
+	"What kind of question is that," you say, "I can't see it!"
+</p>
+<p>
+	Same goes for the view matrix, albeit in a math-ey way - objects too close to or behind the camera
+	have unwanted behavior. In the process of projecting the triangles, you divide by their z distance
+	from the camera. When this z distance gets very small, the numbers get very large, and it's a lot
+	slower to do tons of calculations on very large numbers. (This is where you start to get memory
+	problems as well, which for this program manifested in crashes due to attempted overflow of f32s.)
+	Also - why should we even be doing calculations on vertices that are off-screen anyway?
 </p>
 <p>
 	This is where clipping comes in. We only want to be rendering things that are within our view
@@ -384,9 +390,14 @@
 
 <p>
 	Beautiful! We've still got a few glitches around the corners and the lid, but that looks about
-	right.
+	right. ~cue fanfare~
 </p>
-<h3 id="list">shortlist of absolute beginners' graphics resources</h3>
+<h3 id="list">shortlist of absolute beginners' graphics resources i enjoyed</h3>
+<p>
+	In making this engine as well as starting out with GPU programming, I ran through a bunch of
+	different resources. Some were helpful. Some were less so. Here's a roundup of the ones I can
+	remember in this moment!
+</p>
 <ul>
 	<li>
 		<h6>javidx9</h6>
@@ -416,30 +427,32 @@
 			A <RainbowLink href={'https://github.com/stackgl/shader-school'}
 				>10-years-but-still-running</RainbowLink
 			> GLSL shader interactive course. Really really good, and you can still get it running on local!
-			Don't try to get rid of the broken dependency loops tho that way lies madness. Thank you to fellow
-			Recurser Petar for putting me onto this when I was trying and failing to brute force my way into
-			understanding shaders.
+			Don't try to get rid of the broken node dependency loops tho that way lies madness. Thank you to
+			a fellow Recurser (you know who you are!) for putting me onto this when I was trying and failing
+			to brute force my way into understanding shaders.
 		</p>
 	</li>
 	<li>
 		<h6>shader toy</h6>
 		<p>
-			A <RainbowLink href={'https://www.shadertoy.com/'}>really excellent website</RainbowLink> for seeing
+			A <RainbowLink href={'https://www.shadertoy.com/'}>really excellent website</RainbowLink> to see
 			the bonkers things people can do with shaders and hope one day you too can be that crazy skilled.
 		</p>
 	</li>
 	<li>
 		<h6>learn wgpu</h6>
-		<RainbowLink href="https://sotrh.github.io/learn-wgpu/#what-is-wgpu">learn wgpu.</RainbowLink> honestly,
-		this one's probably best if you're coming in with some graphics background. i tried moving to this
-		right after writing the software renderer but found it confusing/buggy in places and entirely copy-this-boilerplate-ey
-		in others. by the end i could change the sea of stone cubes in the tutorial to a sea of dancing kate
-		bushes (see below), but not much else--- everything i'd written felt pretty opaque and difficult
-		to reason about.
-		<RainbowLink
-			href="https://www.youtube.com/watch?v=knmuobQFNmM&list=PLWtPciJ1UMuBs_3G-jFrMJnM5ZMKgl37H"
-			>chris biscardi has a good series</RainbowLink
-		> walking through most of learn wgpu, but it seems even they bailed before reaching the end lol.
+		<p>
+			<RainbowLink href="https://sotrh.github.io/learn-wgpu/#what-is-wgpu">learn wgpu.</RainbowLink>
+			honestly, this one's probably best if you're coming in with some graphics background. i tried moving
+			to this right after writing the software renderer but found it confusing/buggy in places and entirely
+			copy-this-boilerplate-ey in others. by the end i could change the sea of stone cubes in the tutorial
+			to a sea of dancing kate bushes (see below), but not much else--- everything i'd written felt pretty
+			opaque and difficult to reason about.
+			<RainbowLink
+				href="https://www.youtube.com/watch?v=knmuobQFNmM&list=PLWtPciJ1UMuBs_3G-jFrMJnM5ZMKgl37H"
+				>chris biscardi has a good series</RainbowLink
+			> walking through most of learn wgpu, but it seems even they bailed before reaching the end lol.
+		</p>
 	</li>
 	<li>
 		<h6>x11 fun</h6>
@@ -448,7 +461,7 @@
 				>this fun
 			</RainbowLink> interactive book-tutorial on the X11 window system in the Recurse chat. It has a
 			bunch of fun demos that helped me understand what aliasing/anti-aliasing are and why they occur,
-			and has a bunch of fun legacy Linux stuff. Shoutout to whoever linked me to this!
+			and has a bunch of fun legacy Linux stuff. Shoutout to whoever linked this!
 		</p>
 	</li>
 </ul>
@@ -470,6 +483,12 @@
 {/if}
 
 <div class="footnote">
+	<p>
+		<a href="#webgpu-note" id="webgpu" class="bottom">^</a>taking advice on this one! I think WebGPU
+		can't detect my NVIDIA GPU on hybrid mode, and my laptop doesn't support dedicated mode at the
+		moment. Also getting some "Creating an image from external memory is not supported" console
+		messages? so clearly asset fetching is not working?
+	</p>
 	<p>
 		<a href="#skyrim-note" id="skyrim" class="bottom">^</a> this is a joke lol
 	</p>
