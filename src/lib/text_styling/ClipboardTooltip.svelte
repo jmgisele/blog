@@ -48,7 +48,7 @@
 				});
 			});
 
-			// tooltip.style.display = 'block';
+			tooltip.style.display = 'inline-block';
 		});
 	};
 
@@ -147,7 +147,7 @@
 	}
 
 	.tooltip {
-		display: none;
+		display: block;
 		width: max-content;
 		position: absolute;
 		top: 0;
@@ -161,9 +161,6 @@
 		margin: 0px;
 		line-height: 1rem;
 		text-align: center;
-		top: 100%;
-		left: 50%;
-		transition: all 0.1s linear;
 	}
 
 	.marg {
