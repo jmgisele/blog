@@ -48,7 +48,7 @@
 				});
 			});
 
-			tooltip.style.display = 'block';
+			// tooltip.style.display = 'block';
 		});
 	};
 
