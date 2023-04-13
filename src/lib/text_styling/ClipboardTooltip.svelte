@@ -30,12 +30,14 @@
 		document.getElementById(id).style.visibility = 'hidden';
 		isClicked = false;
 	};
+
 	let tooltipPositioner = () => {
 		const tooltips = document.querySelectorAll('.tooltip');
 
 		tooltips.forEach((tip) => {
 			let tooltip = document.getElementById(tip.id);
 			let icon = document.getElementById(`${tip.id}-icon`);
+			tooltip.style.display = 'block';
 
 			computePosition(icon, tooltip, {
 				placement: 'bottom',
@@ -144,6 +146,7 @@
 	}
 
 	.tooltip {
+		display: none;
 		width: max-content;
 		position: absolute;
 		top: 0;
