@@ -37,7 +37,6 @@
 		tooltips.forEach((tip) => {
 			let tooltip = document.getElementById(tip.id);
 			let icon = document.getElementById(`${tip.id}-icon`);
-			tooltip.style.display = 'block';
 
 			computePosition(icon, tooltip, {
 				placement: 'bottom',
@@ -48,6 +47,8 @@
 					top: `${y}px`
 				});
 			});
+
+			tooltip.style.display = 'block';
 		});
 	};
 
