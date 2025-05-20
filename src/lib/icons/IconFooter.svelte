@@ -5,7 +5,7 @@
 
 <ul>
 	<li>
-		<!-- <RainbowLink
+		<RainbowLink
 			href="/blog/rss"
 			add_class="external-links"
 			target="_blank"
@@ -25,7 +25,7 @@
 					/>
 				</svg>
 			</div>
-		</RainbowLink> -->
+		</RainbowLink>
 	</li>
 	<li>
 		<RainbowLink
