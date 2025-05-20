@@ -79,7 +79,7 @@
 >
 	<div class="tooltip" {id}>
 		{tooltipText} <br />
-		<span>
+		<!-- <span>
 			{#if isClicked}
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -119,9 +119,10 @@
 				</svg>
 			{/if}
 		</span>
-	</div>
-	<slot />
-</button>
+	</div> -->
+		<slot />
+	</div></button
+>
 
 <style>
 	* {
@@ -190,7 +191,9 @@
 	button.rainbow:focus::before {
 		visibility: visible;
 		width: 100%;
-		transition: visibility, width 0.5s ease-out;
+		transition:
+			visibility,
+			width 0.5s ease-out;
 	}
 
 	button.rainbow:hover::before,
