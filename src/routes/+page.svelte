@@ -1,4 +1,5 @@
 <script>
+	import BasicWrapper from '../lib/wrappers/BasicWrapper.svelte';
 </script>
 
 <svelte:head>
