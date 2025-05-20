@@ -41,7 +41,7 @@
 					<span class="entry-spacer"> {`  `}</span>
 					<span class="date">{new Date(entry.published).toDateString()}</span>
 					<span class="entry-spacer"> {`    `}</span>
-					<RainbowLink href={`${base}/blog/${entry.slug}`} add_class="entry-title"
+					<RainbowLink href={`${base}/blog/${entry.slug}`} add_class="entry-title" target=""
 						>{entry.title}</RainbowLink
 					>
 				</li>
