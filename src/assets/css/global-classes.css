@@ -40,3 +40,11 @@ a.footnote,
 	position: absolute;
 	transform: translateY(-50vh);
 }
+
+.serif {
+	font-family: 'Noto Serif', serif;
+}
+
+.sans-serif {
+	font-family: 'Noto Sans', sans-serif;
+}

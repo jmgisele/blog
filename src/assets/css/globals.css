@@ -3,5 +3,5 @@
 @import './theme/catppuccin-frappe-highlight-js.css';
 @import './theme/theme.css';
 @import './media-queries.css';
-@import './selector-styling.css';
+@import './global-selector-styling.css';
 @import './global-classes.css';

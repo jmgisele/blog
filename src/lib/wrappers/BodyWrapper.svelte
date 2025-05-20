@@ -17,7 +17,7 @@
 	{#if bottomLinks}
 		<hr />
 		<IconFooter />
-		<div class="bottom-padding" />
+		<div class="bottom-padding"></div>
 	{/if}
 </div>
 

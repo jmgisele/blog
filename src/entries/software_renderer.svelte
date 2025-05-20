@@ -53,7 +53,7 @@
 	graphics API, working in Firefox Nightly or Chrome Canary on Arch.<a
 		class="footnote"
 		href="#webgpu">^</a
-	><span class="anchor" id="webgpu-note" />
+	><span class="anchor" id="webgpu-note" ></span>
 </p>
 <p>
 	But we're not here to talk about any of that today! Instead, I'll bring you back with me to late
@@ -181,7 +181,7 @@
 	implementing skyrim.<a class="footnote" href="#skyrim">^</a><span
 		class="anchor"
 		id="skyrim-note"
-	/>
+	></span>
 	The math is roughly the same because almost everything in computer graphics is represented as triangles,
 	points, and lines, which was kinda shocking to me originally tbh. Ok, probably there are <RainbowLink
 		href="https://developer.nvidia.com/gpugems/gpugems/part-vi-beyond-triangles"
@@ -484,7 +484,7 @@
 {#if kates}
 	<h5>the sea of kates (click in me! i've got a movable WASD camera!)</h5>
 	<div class="wasm-container">
-		<div id="wasm-example" />
+		<div id="wasm-example" ></div>
 	</div>
 {/if}
 

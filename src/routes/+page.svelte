@@ -17,21 +17,18 @@
 	<h1>James Gisele</h1>
 	<Navbar />
 	<p>
-		I'm a software developer based in Philly! This blog is under construction right now, so kindly
-		bear with the dead links and wonky styles :)
+		I'm a software developer based in Philadelphia! Professionally, I make web apps.
+		Unprofessionally, I dabble in Rust and systems programming. I like strong type systems,
+		designing creative frontends, and learning a little bit about a lot of things.
 	</p>
 	<p>
-		My professional work has thus far been in full-stack web development. I like to dabble in Rust
-		and graphicsey stuff on the side, so expect that to be most of the content here.
-	</p>
-	<p>
-		I'm currently looking for work! Feel free to shoot me an email at
+		I'm currently looking for work. Feel free to shoot me an email at
 		<span>
-			<address class="email">
+			<span class="email">
 				<RainbowLink href="mailto:james.may.gisele@protonmail.com" add_class="main-email"
 					>james.may.gisele@protonmail.com</RainbowLink
 				>
-			</address></span
+			</span></span
 		>
 		if you'd like to get in touch.
 	</p>

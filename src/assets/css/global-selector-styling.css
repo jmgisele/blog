@@ -1,3 +1,17 @@
+@font-face {
+	font-family: 'Noto Sans';
+	src:
+		url('/fonts/NotoSans-VariableFont_wdth\,wght.ttf') format('woff2'),
+		url('/fonts/NotoSans-VariableFont_wdth\,wght.ttf') format('woff');
+}
+
+@font-face {
+	font-family: 'Noto Serif';
+	src:
+		url('/fonts/NotoSerif-VariableFont_wdth_wght.ttf') format('woff2'),
+		url('/fonts/NotoSerif-VariableFont_wdth_wght.ttf') format('woff');
+}
+
 * {
 	box-sizing: border-box;
 }
@@ -30,6 +44,24 @@ h4,
 h5,
 h6 {
 	margin: 1em 0em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button {
+	font-family: 'Noto Serif', serif;
+}
+
+p,
+div,
+span,
+a,
+li {
+	font-family: 'Noto Sans', sans-serif;
 }
 
 h1 {
