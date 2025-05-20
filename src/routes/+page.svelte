@@ -1,9 +1,9 @@
 <script>
 	import { base } from '$app/paths';
 	import BasicWrapper from '../lib/wrappers/BasicWrapper.svelte';
-	// import Navbar from '../lib/navigation/Navbar.svelte';
+	import Navbar from '../lib/navigation/Navbar.svelte';
 	import Star from '../lib/icons/Star.svelte';
-	// import IconFooter from '../lib/icons/IconFooter.svelte';
+	import IconFooter from '../lib/icons/IconFooter.svelte';
 	import RainbowLink from '../lib/text_styling/RainbowLink.svelte';
 
 	export let data;
@@ -15,7 +15,7 @@
 
 <BasicWrapper backArrow={false} body_id="home-body">
 	<h1>James Gisele</h1>
-	<!-- <Navbar /> -->
+	<Navbar />
 	<p>
 		I'm a software developer based in Philadelphia! Professionally, I make web apps.
 		Unprofessionally, I dabble in Rust and systems programming. I like strong type systems,
@@ -49,7 +49,7 @@
 		</ul>
 	</div>
 	<hr />
-	<!-- <IconFooter /> -->
+	<IconFooter />
 	<p>
 		This blog is made in
 		<RainbowLink href="https://kit.svelte.dev/" target="_blank" rel="noopener noreferrer"

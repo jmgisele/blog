@@ -3,9 +3,9 @@
 </script>
 
 <nav class="navbar">
-	<a href={`${base}/`} class="serif">Blog</a>
+	<!-- <a href={`${base}/`} class="serif">Blog</a>
 	<a href={`${base}/projects`} class="serif">Stuff I've Made</a>
-	<a href={`${base}/resume`} class="serif">Resume</a>
+	<a href={`${base}/resume`} class="serif">Resume</a> -->
 </nav>
 
 <style>
