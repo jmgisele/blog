@@ -120,9 +120,9 @@
 			{/if}
 		</span>
 	</div> -->
-		<slot />
-	</div></button
->
+	</div>
+	<slot />
+</button>
 
 <style>
 	* {
