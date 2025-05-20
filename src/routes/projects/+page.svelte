@@ -12,13 +12,12 @@
 	import Accordion from '../../lib/accordion/Accordion.svelte';
 	import AccordionItem from '../../lib/accordion/AccordionItem.svelte';
 
-	let active = null;
 </script>
 
 <BasicWrapper>
 	<BodyWrapper navbar="true" bottomLinks="true">
 		<h1>Projects</h1>
-		<Accordion bind:active>
+		<Accordion>
 			<AccordionItem title={'Shel Maala Online Learning Platform'} id="1">
 				<div slot="body">
 					<img
