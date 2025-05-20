@@ -75,7 +75,7 @@
 		</RainbowLink>
 	</li>
 
-	<!-- <li>
+	<li>
 		<ClipboardTooltip textToCopy="503-708-4217" tooltipText="503-708-4217" id="phone">
 			<div style="color: var(--subtext1)">
 				<svg
@@ -94,14 +94,14 @@
 				</svg>
 			</div></ClipboardTooltip
 		>
-	</li> -->
+	</li>
 	<li>
 		<ClipboardTooltip
 			textToCopy="james.may.gisele@protonmail.com"
 			tooltipText="james.may.gisele@protonmail.com"
 			id="email"
 		>
-			<!-- <div style="color: var(--subtext1)">
+			<div style="color: var(--subtext1)">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					width="30"
@@ -116,7 +116,6 @@
 					/>
 				</svg>
 			</div>
-	 -->
 		</ClipboardTooltip>
 	</li>
 </ul>
