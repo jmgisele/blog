@@ -22,20 +22,6 @@ a.footnote,
 	text-decoration: none;
 }
 
-.footnote {
-	margin-top: 100px;
-}
-
-.footnote p {
-	color: var(--teal);
-}
-
-.footnote b {
-	color: var(--red);
-
-	margin-right: 5px;
-}
-
 .anchor {
 	position: absolute;
 	transform: translateY(-50vh);
@@ -47,4 +33,24 @@ a.footnote,
 
 .sans-serif {
 	font-family: 'Noto Sans', sans-serif;
+}
+
+/* footnote animation */
+/* used for both footnote and superscript components */
+.pulse {
+	animation: pulse ease-in-out 0.8s 2;
+}
+
+@keyframes pulse {
+	0% {
+		scale: 1;
+	}
+
+	50% {
+		scale: 1.65;
+	}
+
+	100% {
+		scale: 1;
+	}
 }

@@ -17,10 +17,6 @@
 	import RainbowButton from '../lib/text_styling/RainbowButton.svelte';
 	import footnoteInit from '../lib/text_styling/footnoteInit';
 
-	onMount(() => {
-		footnoteInit('a.footnote', 'a.bottom');
-	});
-
 	let kates = false;
 	const start_the_kates = () => {
 		kates = true;
@@ -53,7 +49,7 @@
 	graphics API, working in Firefox Nightly or Chrome Canary on Arch.<a
 		class="footnote"
 		href="#webgpu">^</a
-	><span class="anchor" id="webgpu-note" ></span>
+	><span class="anchor" id="webgpu-note"></span>
 </p>
 <p>
 	But we're not here to talk about any of that today! Instead, I'll bring you back with me to late
@@ -178,9 +174,7 @@
 <p>Oh, you <b>know</b> what's next! It's <i>triangles</i> time baybee!</p>
 <p>
 	Turns out that if you can draw triangles that form a rotating cube, you're like, halfway to
-	implementing skyrim.<a class="footnote" href="#skyrim">^</a><span
-		class="anchor"
-		id="skyrim-note"
+	implementing skyrim.<a class="footnote" href="#skyrim">^</a><span class="anchor" id="skyrim-note"
 	></span>
 	The math is roughly the same because almost everything in computer graphics is represented as triangles,
 	points, and lines, which was kinda shocking to me originally tbh. Ok, probably there are <RainbowLink
@@ -484,7 +478,7 @@
 {#if kates}
 	<h5>the sea of kates (click in me! i've got a movable WASD camera!)</h5>
 	<div class="wasm-container">
-		<div id="wasm-example" ></div>
+		<div id="wasm-example"></div>
 	</div>
 {/if}
 
