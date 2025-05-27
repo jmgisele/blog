@@ -23,18 +23,6 @@
 		color: var(--flamingo);
 	}
 
-	.entry-title {
-		padding: 0px;
-		margin: 0px;
-		flex-basis: 70%;
-	}
-
-	@media screen and (max-width: 768px) {
-		.entry-title {
-			flex-basis: 80%;
-		}
-	}
-
 	.external-links {
 		display: flex;
 		flex-direction: row;

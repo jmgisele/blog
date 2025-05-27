@@ -38,12 +38,14 @@
 			{#each data.entries as entry}
 				<li class="li-box">
 					<Star />
-					<span class="entry-spacer"> {`  `}</span>
-					<span class="date">{new Date(entry.published).toDateString()}</span>
-					<span class="entry-spacer"> {`    `}</span>
-					<RainbowLink href={`${base}/blog/${entry.slug}`} add_class="entry-title" target=""
-						>{entry.title}</RainbowLink
-					>
+					<span>
+						<span class="entry-spacer"> {`  `}</span>
+						<span class="date">{new Date(entry.published).toDateString()}</span>
+						<span class="entry-spacer"> {`    `}</span>
+					</span>
+					<span class="entry-title">
+						<RainbowLink href={`${base}/blog/${entry.slug}`} target="">{entry.title}</RainbowLink>
+					</span>
 				</li>
 			{/each}
 		</ul>
@@ -92,11 +94,30 @@
 	.li-box {
 		display: flex;
 		flex-direction: row;
-		justify-content: left;
+		justify-content: space-between;
+		flex-wrap: wrap;
 		padding-bottom: 1em;
 	}
 
 	.entry-spacer {
 		white-space: pre;
+	}
+
+	.entry-title {
+		padding: 0px;
+		margin: 0px;
+		flex-basis: 70%;
+		text-align: right;
+	}
+
+	@media screen and (max-width: 768px) {
+		.li-box {
+			justify-content: center;
+			flex-wrap: unset;
+		}
+		.entry-title {
+			flex-basis: 80%;
+			text-align: unset;
+		}
 	}
 </style>
