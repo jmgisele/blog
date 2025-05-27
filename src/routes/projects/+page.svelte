@@ -11,14 +11,13 @@
 	import raytracing from '../../assets/images/raytracing_1.png';
 	import Accordion from '../../lib/accordion/Accordion.svelte';
 	import AccordionItem from '../../lib/accordion/AccordionItem.svelte';
-
 </script>
 
 <BasicWrapper>
 	<BodyWrapper navbar="true" bottomLinks="true">
-		<h1>Projects</h1>
+		<h1>Side Projects</h1>
 		<Accordion>
-			<AccordionItem title={'Shel Maala Online Learning Platform'} id="1">
+			<AccordionItem title={'Shel Maala - Online Learning Platform'} id="1">
 				<div slot="body">
 					<img
 						src={shel}
