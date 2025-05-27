@@ -17,6 +17,12 @@ export const metadata = {
 			title: "Child's Play: Writing a Software Renderer in Rust",
 			description: "It's not actually that hard!",
 			published: 'April 11, 2023 00:00:00'
+		},
+		{
+			slug: 'encrypting_existing',
+			title: "Encrypting an existing btrfs root partition",
+			description: "Encrypting an existing btrfs root partition",
+			published: 'May 26, 2025 00:00:00'
 		}
 	]
 };
