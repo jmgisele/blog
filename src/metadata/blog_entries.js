@@ -23,6 +23,18 @@ export const metadata = {
 			title: "Encrypting an existing btrfs root partition",
 			description: "Encrypting an existing btrfs root partition",
 			published: 'May 26, 2025 00:00:00'
+		},
+		{
+			slug: 'neoluddite_revolution',
+			title: "Neo-Luddite Revolution I: Some thoughts on slowing down the churn",
+			description: "Some strategies for slowing down the churn",
+			published: 'May 27, 2025 00:00:00'
+		},
+		{
+			slug: 'intentional_attention',
+			title: "Neo-Luddite Revolution II: Attention & Intention",
+			description: "practical strategies for slowing down the churn",
+			published: 'May 28, 2025 00:00:00'
 		}
 	]
 };
