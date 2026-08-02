@@ -35,6 +35,12 @@ export const metadata = {
 			title: "Neo-Luddite Revolution II: Attention & Intention",
 			description: "practical strategies for slowing down the churn",
 			published: 'May 28, 2025 00:00:00'
+		},
+		{
+			slug: 'sicp_2026',
+			title: "Getting a Working SICP environment in Emacs in 2026",
+			description: "Getting a Working SICP environment in Emacs in 2026",
+			published: 'August 02, 2026 00:00:00'
 		}
 	]
 };
