@@ -13,10 +13,16 @@
 	const test_racket = `# lang sicp
   (inc 1)
 `;
-	
+
 	const racket_hash_lang_mode = `(use-package racket-mode
   :mode (("\\.rkt\\'" . racket-hash-lang-mode)))
 `;
+
+	const racket_debug = `(use-package racket-mode
+  :mode (("\\.rkt\\'" . racket-hash-lang-mode))
+  :config (define-key racket-mode-map (kbd "<f7>") 'racket-run-with-debugging))
+`;
+
 
 	const emacs_ob_racket = `(add-to-list 'load-path "~/path/to/emacs-ob-racket/dir")
 (package-initialize) ;; need to run this once after adding everything to load-path
@@ -40,7 +46,7 @@
 `
 
 	const print_right = `
-(#%require (only racket/base                     
+(#%require (only racket/base
                    print-as-expression
                    print-pair-curly-braces
                    print-mpair-curly-braces))
@@ -49,7 +55,7 @@
   (print-mpair-curly-braces #f)
 `
 
- const org_header_excercise_title_racket = `(defun org-header-exercise-title-racket()
+	const org_header_excercise_title_racket = `(defun org-header-exercise-title-racket()
  (let* ((org-nearest-heading
      (org-element-property
       :title
@@ -96,7 +102,10 @@
 		Ability to embed SRC blocks within an emacs <RainbowLink href="https://orgmode.org/">.org</RainbowLink> file with syntax highlighting
 	</li>
 	<li>
-		Ability to hit a keybinding and send that source block to my REPL
+		Ability to hit a keybinding and send that source block in an org file to my REPL
+	</li>
+	<li>
+		Working debugger for SICP scheme within emacs.
 	</li>
 	<li>
 		Ability to hit a keybinding and export <b>all</b> source blocks which are under a header that contains "Exercise" to a file named after that heading in a subdirectory in the current working directory. Eg - any source block under the heading <i>Exercise 1</i> would be placed in the file <i>./local_dir/Exercise 1</i>. But a source block under the heading <i>Chapter 1 notes</i> would not! (Org users know this is called <RainbowLink href="https://orgmode.org/manual/Extracting-Source-Code.html">tangling!)</RainbowLink>
@@ -144,7 +153,7 @@
 <p>racket-mode is available as a MELPA package. The following should all go in your emacs setup file. I use vanilla emacs so if you're using Doom/straight.el/what have you to manage packages, edit accordingly. We also need to tell emacs to hook into it when we visit a .rkt mode file.
 </p>
 
-	<Highlight language={lisp} code={racket_hash_lang_mode} />
+<Highlight language={lisp} code={racket_hash_lang_mode} />
 <p>
 	We use  <span class="hljs">racket-hash-lang-mode</span> here because this tells racket-mode to go looking for a #lang line to tell how to lex (for syntax highlighting, indent, navigation).
 </p>
@@ -169,7 +178,12 @@
 		class="desktop"
 		/>
 </div>
-<p>Amazing! We've got a working environment now. This knocks out the first two items in the vision. Unfortunately, the rest are a bit more of a pain.
+
+<p>
+	Amazing! To tie everything up, racket-mode has a built-in debugger. If we run <span class="hljs">racket-run-with-debugging</span> within a file we're visiting in racket-mode, we'll get dropped into a debugger whose keybindings are visible by hitting <span class="hljs">?</span>. We can amend our racket-mode config to bind this to a convenient key:
+</p>
+<Highlight language={lisp} code={racket_debug} />
+<p>We've got a working environment now. This knocks out the first two items in the vision. Unfortunately, the rest are a bit more of a pain.
 	<h3>Org Mode Interop</h3>
 <p>First, let's get racket-mode support within .org src blocks. This can be done through the packages
 	<RainbowLink href="https://github.com/kaz-yos/eval-in-repl">eval-in-repl</RainbowLink>,
@@ -190,7 +204,7 @@
 </p>
 <h4>Geiser Config</h4>
 <p> With the above config loaded, if we open up an org file, add a source block, and hit the keybinding we configured above, we should be placed into a Geiser repl:
-</p> 
+</p>
 
 <div class="center-image-flex">
 	<img
@@ -201,8 +215,8 @@
 		/>
 </div>
 <p>Uh oh.
- <span class="hljs">inc: undefined;
- cannot reference an identifier before its definition</span>??
+	<span class="hljs">inc: undefined;
+		cannot reference an identifier before its definition</span>??
 	Clearly Geiser doesn't understand that we mean to use the sicp language, not default vanilla racket. We've gotta manually run  <span class="hljs">(require sicp)</span> for that. Once we've done that, let's try again:
 </p>
 <div class="center-image-flex">
@@ -216,7 +230,7 @@
 <p> Better --- it can take an   <span class="hljs">(inc 1)</span> --- but what the heck is <span class="hljs">(mcons 1 (mcons 2 (mcons 3 (mcons 4 '()))))?</span>
 </p>
 <p>It turns out this is a quirk of how Racket-thru-Geiser is loading the SICP language - under the hood, the racket interpreter turns all our SICP conses (mutable by default) to Racket mconses (since normal Racket conses are immutable, <RainbowLink href="https://stackoverflow.com/questions/23411900/why-am-i-getting-mcons-cells-in-my-cons-list">I guess?</RainbowLink>). If we want Geiser to know to use our SICP printing rules, we can tell it so <RainbowLink href="https://www.reddit.com/r/Racket/comments/99e1qe/comment/e4queby">(thanks to random reddit user soegaard):
-</RainbowLink>:
+	</RainbowLink>:
 </p>
 
 <Highlight language={scheme} code={print_right} />
