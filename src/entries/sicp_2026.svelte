@@ -183,7 +183,7 @@
 	Amazing! To tie everything up, racket-mode has a built-in debugger. If we run <span class="hljs">racket-run-with-debugging</span> within a file we're visiting in racket-mode, we'll get dropped into a debugger whose keybindings are visible by hitting <span class="hljs">?</span>. We can amend our racket-mode config to bind this to a convenient key:
 </p>
 <Highlight language={lisp} code={racket_debug} />
-<p>We've got a working environment now. This knocks out the first two items in the vision. Unfortunately, the rest are a bit more of a pain.
+<p>We've got a working environment now. This knocks out the first two items in the vision. Unfortunately, the rest are a bit more of a pain.</p>
 	<h3>Org Mode Interop</h3>
 <p>First, let's get racket-mode support within .org src blocks. This can be done through the packages
 	<RainbowLink href="https://github.com/kaz-yos/eval-in-repl">eval-in-repl</RainbowLink>,
@@ -261,7 +261,7 @@
 		/>
 </div>
 <h3>Cherry on top: Bookmarking the whole setup</h3>
-<p>Emacs natively has the ability to bookmark specific places in files (including Info nodes) via <span class="hljs">bookmark-save</span>. It also has the ability to save "where you're at" in terms of buffers and windows via <span class="hljs">desktop-save</span>, which will drop you back where you were the next time you load emacs. Neither of these is exactly what I want. I want to save my full buffer/window/place setup (like desktop-save) but have a list of different setups I can go to on-demand and not have that overwritten or loaded every time I open/close emacs (like bookmark-save). For this - I think? - I need an external package. There are 1000s of options for this; I chose one that's extremely simple and has what I need, which is <RainbowLink href="https://github.com/minad/bookmark-view">bookmark-view</RainbowLink>.
+<p>Emacs natively has the ability to bookmark specific places in files (including Info nodes) via <span class="hljs">bookmark-save</span>. It also has the ability to save "where you're at" in terms of buffers and windows via <span class="hljs">desktop-save</span>, which will drop you back where you were the next time you load emacs. Neither of these is exactly what I want. I want to save my full buffer/window/place setup (like desktop-save) but have a list of different setups I can go to on-demand and not have that overwritten or loaded every time I open/close emacs (like bookmark-save). For this - I think? - I need an external package. There are 1000s of options for this; I chose one that's extremely simple and has what I need, which is <RainbowLink href="https://github.com/minad/bookmark-view">bookmark-view.</RainbowLink></p>
 
 <p>A basic config in my init file:</p>
 <Highlight language={lisp} code={bookmark_save}/>

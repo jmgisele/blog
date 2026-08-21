@@ -46,7 +46,7 @@
 			title: 'Rust Software Renderer',
 			src: long_teapot,
 			alt: "gif of a software renderer rendering a rotating mesh of a pink utah teapot, with basic shading on a plain blue background",
-			links: [{link: "`${base}/blog/software_renderer`", title: "blog post about software renderer"}, {link:"https://github.com/jmgisele/childs-play" }]
+			links: [{link: `/blog/software_renderer`, title: "blog post about software renderer"}, {link:"https://github.com/jmgisele/childs-play" }]
 		},
 
 	]
@@ -93,7 +93,7 @@
 					<RainbowLink
 						href="https://www.youtube.com/watch?v=ih20l3pJoeU&t">excellent</RainbowLink
 																																						>
-					C++ graphics engine tutorial. <RainbowLink href=[projects[4].links[0].link]
+					C++ graphics engine tutorial. <RainbowLink href={projects[4].links[0].link}
 			 																							 >Blog post here! </RainbowLink>
 				</p>
 			</ProjectGridItem>
