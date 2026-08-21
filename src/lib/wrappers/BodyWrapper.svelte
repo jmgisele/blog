@@ -4,12 +4,13 @@
 
 	export let bottomLinks = false;
 	export let navbar = false;
+	export let currentPage = 'home';
 </script>
 
 <div class="content-body">
 	{#if navbar}
 		<div class="nav-container">
-			<Navbar />
+			<Navbar {currentPage} />
 		</div>
 		<hr />
 	{/if}

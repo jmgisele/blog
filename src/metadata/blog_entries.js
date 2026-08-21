@@ -41,6 +41,12 @@ export const metadata = {
 			title: "Getting a Working SICP environment in Emacs in 2026",
 			description: "Getting a Working SICP environment in Emacs in 2026",
 			published: 'August 02, 2026 00:00:00'
+		},
+		{
+			slug: 'embedded_todo',
+			title: "You, Too, Could Have A Networked TODO App Running On 2011 Embedded EInk",
+			description: "And I'm here to provide.",
+			published: 'August 20, 2026 00:00:00'
 		}
 	]
 };

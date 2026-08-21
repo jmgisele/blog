@@ -1,10 +1,13 @@
 <script>
 	import { base } from '$app/paths';
+
+
+	export let currentPage = 'home';
 </script>
 
 <nav class="navbar">
-	<a href={`${base}/`} class="serif">Blog</a>
-	<a href={`${base}/projects`} class="serif">Stuff I've Made</a>
+	<a href={`${base}/`} class={`serif ${currentPage == 'home' ? ' current' : ''}`}>Blog</a>
+	<a href={`${base}/projects`} class={`serif ${currentPage == 'projects' ? ' current' : ''}`}>Stuff I've Made</a>
 	<a href={`${base}/resume`} class="serif">Resume</a>
 </nav>
 
@@ -48,7 +51,8 @@
 	}
 
 	a:hover::before,
-	a:focus::before {
+	a:focus::before,
+	a.current::before {
 		visibility: visible;
 		width: 100%;
 		transition:
@@ -57,7 +61,8 @@
 	}
 
 	a:hover::before,
-	a:focus::before {
+	a:focus::before,
+	a.current::before {
 		background: linear-gradient(
 			315deg,
 			var(--rosewater) 0%,
@@ -65,7 +70,7 @@
 			var(--pink) 10%,
 			var(--mauve) 15%,
 			var(--red) 20%,
-			\var(--yellow)25%,
+			var(--yellow)25%,
 			var(--green) 30%,
 			var(--teal) 35%,
 			var(--sky) 40%,

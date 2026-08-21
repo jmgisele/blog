@@ -17,7 +17,7 @@
 	<h1>James Gisele</h1>
 	<Navbar />
 	<p>
-		I'm a software developer based in Philadelphia! Professionally, I make web apps.
+		I'm a software developer currently based in Philadelphia. Professionally, I make web apps.
 		Unprofessionally, I dabble in all sorts of things. I like strong type systems,
 		designing creative frontends, and learning a little bit about a lot of things.
 	</p>

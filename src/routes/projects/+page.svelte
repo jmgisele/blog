@@ -1,6 +1,4 @@
 <script>
-	import { base } from '$app/paths';
-
 	import RainbowLink from '../../lib/text_styling/RainbowLink.svelte';
 	import BasicWrapper from '../../lib/wrappers/BasicWrapper.svelte';
 	import BodyWrapper from '../../lib/wrappers/BodyWrapper.svelte';
@@ -8,127 +6,110 @@
 	import long_teapot from '../../assets/images/rust_software/long_teapot.gif';
 	import slit from '../../assets/images/double_slit.png';
 	import shel from '../../assets/images/shelmaala.png';
-	import raytracing from '../../assets/images/raytracing_1.png';
-	import Accordion from '../../lib/accordion/Accordion.svelte';
-	import AccordionItem from '../../lib/accordion/AccordionItem.svelte';
+	import gyopo from  '../../assets/images/gyopo.png';
+	import kobo from '../../assets/images/kobo.jpg';
+	import pocketbook from '../../assets/images/pocketbook.jpg';
+	import ProjectGridItem from '../../lib/grid/ProjectGridItem.svelte';
+
+	const projects = [
+		{
+			title: 'GYOPO',
+			src: gyopo,
+			links: [ { link: "https://gyopo.us", title: "gyopo website"}],
+			alt: "Screenshot of the GYOPO website",
+		},
+		{
+			title: 'Shel Maala - Online Learning Platform',
+			src: shel,
+			links: [ { link: "https://www.shelmaala.org/", title: "shel maala learning platform"}],
+			alt: "screenshot of an e-learning website titled 'Shel Maala.' website is dark blue with gold and maroon accents and a pomegranate motif.",
+		},
+		{
+			title: "Networked Embedded EInk TODO app (why not)",
+			src: kobo,
+			alt: 'picture of a souped up 2011 kobo ereader displaying a basic todo application',
+			links: [{link: '/blog/embedded_todo', title: 'blog post on embedded todo app'},{link: 'https://github.com/jmgisele/embedded-todo-eink-rust', title: 'github repo for my absurd todo app'}]
+		},
+		// {
+		// 	title: "FrumReader aka KO(desh)Reader aka Pealim scraper (shh don't tell)",
+		// 	src: pocketbook,
+		// 	alt: 'picture of a pocketbook e-ink reader with the OSS KoReader application installed and the output of a Pealim scraper displayed',
+		// 	links: [{link: 'https://www.github.com', title: 'github repo for frumreader'}]
+		// },
+		{
+			title: 'Double Slit Simulator',
+			src: slit,
+			links: [ { link: "https://jmgisele.github.io/double-slit/", title: "double slit wgpu"}, { link: "https://github.com/jmgisele/double-slit", title: "double slit repo" }],
+			alt: "screencap of a simulation of the double slit experiment. simulation is in 70s green and reddish brown with adjustments for wavelength, slit separation, slit width, distance to display screen, and light or particles. display screen is shown with a particulate interference pattern.",
+		},
+		{
+			title: 'Rust Software Renderer',
+			src: long_teapot,
+			alt: "gif of a software renderer rendering a rotating mesh of a pink utah teapot, with basic shading on a plain blue background",
+			links: [{link: "`${base}/blog/software_renderer`", title: "blog post about software renderer"}, {link:"https://github.com/jmgisele/childs-play" }]
+		},
+
+	]
 </script>
 
 <BasicWrapper>
-	<BodyWrapper navbar="true" bottomLinks="true">
-		<h1>Side Projects</h1>
-		<Accordion>
-			<AccordionItem title={'Shel Maala - Online Learning Platform'} id="1">
-				<div slot="body">
-					<img
-						src={shel}
-						alt={"screenshot of an e-learning website titled 'Shel Maala.' website is dark blue with gold and maroon accents and a pomegranate motif."}
-						class="graphics-image"
-					/>
-					<p>
-						I'm wrapping up a collaborative buildout-slash-glowup for the lovely
-						yeshiva-in-the-clouds <RainbowLink href="https://shel-maala-new.netlify.app/"
-							>Shel Maala!</RainbowLink
-						> Their old site was a static CMS built on <RainbowLink href="https://www.11ty.dev/"
-							>Eleventy.</RainbowLink
-						> The lovely co-rosh-yeshivas had an ambitious vision of being able to host their own educational
-						courses with lessons and homework and course progress and such, and the even more ambitious
-						vision of having it freely hosted. It's been a pleasure to build the site out, especially
-						as I was given the freedom to get cute with the design. <RainbowLink
-							href="https://shel-maala-new.netlify.app/">Check it out</RainbowLink
-						> if you want to learn your alef bet!
-					</p>
-				</div>
-			</AccordionItem>
-			<AccordionItem title={"Raytracing in 'one' weekend"} id="2">
-				<div slot="body">
-					<img
-						src={raytracing}
-						alt={'screencap of a simulation of the double slit experiment. simulation is in 70s colors with adjustments for wavelength, slit separation, slit width, distance to display screen, and light or particles. display screen is shown with a particulate interference pattern.'}
-						class="graphics-image"
-					/>
-					<p>
-						More like in several weeks, an hour or two at a time for me lol. Another Rust buildout
-						of a
-						<RainbowLink href="https://raytracing.github.io/"
-							>classic C++ graphics tutorial</RainbowLink
-						>, this is the project I'm working on now. I'm intentionally moving rather slowly and
-						trying to understand the math while some <RainbowLink href="https://www.recurse.com/"
-							>Recurse</RainbowLink
-						> friends and I make our way through the raytracing chapters of <RainbowLink
-							href="https://www.realtimerendering.com/">Real Time Rendering</RainbowLink
-						>. Hopefully by the end I'll get the chance to mess around with the more complicated
-						algorithms in RTR, but for now I'm working on translating C++ headers to idiomatic Rust
-						lol. Check out my progress <RainbowLink
-							href="https://github.com/jmgisele/raytracing-rust">here!</RainbowLink
-						>
-					</p>
-				</div>
-			</AccordionItem>
-			<AccordionItem title={'Double Slit Simulator'} id="3">
-				<div slot="body">
-					<p>
-						I missed my undergrad physics program, or at least I missed the physics part, and
-						decided to go back to the classics for my first GPU-based graphics project.
-					</p>
-					<img
-						src={slit}
-						alt={'screencap of a simulation of the double slit experiment. simulation is in 70s colors with adjustments for wavelength, slit separation, slit width, distance to display screen, and light or particles. display screen is shown with a particulate interference pattern.'}
-						class="graphics-image"
-					/>
-					<p>
-						This is a sim of <RainbowLink
-							href="https://en.wikipedia.org/wiki/Double-slit_experiment"
-							>the double slit experiment</RainbowLink
-						>, a classic physics experiment demonstrating the wave-like/probablistic nature of
-						particulate matter. (I also included a light double slit experiment, though for light
-						the classical understanding of EM radiation as a wave makes the same predictions and
-						thus is less exciting lol.) It's coded up in Bevy with shaders in WGSL and GLSL, and you
-						can access a moderately buggy WASM version <RainbowLink
-							href="https://jmgisele.github.io/double-slit/">here</RainbowLink
-						>, or download the desktop version <RainbowLink
-							href="https://github.com/jmgisele/double-slit">here</RainbowLink
-						>. If you've got a physics background, probably at this point you're squinting and going
-						"waaaiit a second. Electrons are not in the visible light spectrum, and their de Broglie
-						wavelength is certainly smaller than the 400-700nm range. What kind of simulator is
-						this!" To which I say: so true lol I need to add onto the caveats that the scale and
-						visuals here are misleading. The equations themselves should be the correct ones for
-						particle interference, but I need to go back and polish up the edges and add a bunch of
-						"CAVEAT: electron interference patterns can't be seen by the naked eye" messages, etc.
-					</p>
-				</div>
-			</AccordionItem>
-			<AccordionItem title={'Rust Software Renderer'} id="4">
-				<div slot="body">
-					<h5>A basic software renderer, my first Rust project and my first graphics project.</h5>
-					<p>
-						You can check out my writeup <RainbowLink href={`${base}/blog/software_renderer`}
-							>here!</RainbowLink
-						> and take a look at the code <RainbowLink
-							href="https://github.com/jmgisele/childs-play">here.</RainbowLink
-						>
-					</p>
-					<div>
-						<img
-							src={long_teapot}
-							alt="gif of a software renderer rendering a rotating mesh of a pink utah teapot, with basic shading on a plain blue background"
-							class="graphics-image"
-						/>
-					</div>
-					<p>
-						It's a basic software renderer I wrote to get a handle on the basics of rasterization.
-						Modeled off of javidx9's <RainbowLink
-							href="https://www.youtube.com/watch?v=ih20l3pJoeU&t">excellent</RainbowLink
-						> C++ graphics engine tutorial.
-					</p>
-				</div>
-			</AccordionItem>
-		</Accordion>
+	<BodyWrapper navbar="true" bottomLinks="true" currentPage="projects">
+		<section class="project-grid">
+			<ProjectGridItem project={projects[0]}>
+				<p slot="description">
+					Sanity CMS-powered arts site with ecommerce functionality. Design by <RainbowLink href="https://lukas.eigler-harding.com/">Lukas Eigler-Harding</RainbowLink>
+				</p>
+			</ProjectGridItem>
+			<ProjectGridItem project={projects[1]}>
+				<p slot="description">
+					Decap CMS-based site with ecommerce integration for online learning platform.
+				</p>
+			</ProjectGridItem>
+
+			<ProjectGridItem project={projects[2]}>
+				<p slot="description">
+					Obligatory "didn't stop to think if I should". <RainbowLink target='' href="/blog/embedded_todo">Full writeup here.</RainbowLink>
+				</p>
+			</ProjectGridItem>
+			<!-- <ProjectGridItem project={projects[3]}> -->
+				<!-- 	<p slot="description"> -->
+					<!-- 		Hooked my PocketBook (which I <b>do</b> actually use as an ereader) up so that when I long-press on a word, can search via on-demand scraping the Pealim site. Yet to come: hooking it up somehow to Sefaria's API if I can, adding a robust system for recognizing words I've searched in the past. -->
+					<!-- 	</p> -->
+				<!-- </ProjectGridItem> -->
+			<ProjectGridItem project={projects[3]}>
+				<p slot="description">
+					Project I whipped up while learning Rust and attending a <RainbowLink href="https://www.recurse.com/">Recurse Center</RainbowLink> retreat. A bit rough around the edges. It's a simulator for
+					<RainbowLink
+						href="https://en.wikipedia.org/wiki/Double-slit_experiment"
+						> the double slit experiment</RainbowLink
+																					>.
+					Don't think too hard about the underlying physics of color and light, please...
+				</p>
+			</ProjectGridItem>
+			<ProjectGridItem project={projects[4]}>
+				<p slot="description">
+					Basic software renderer I wrote to get a handle on the basics of rasterization.
+					Modeled off of javidx9's
+					<RainbowLink
+						href="https://www.youtube.com/watch?v=ih20l3pJoeU&t">excellent</RainbowLink
+																																						>
+					C++ graphics engine tutorial. <RainbowLink href=[projects[4].links[0].link]
+			 																							 >Blog post here! </RainbowLink>
+				</p>
+			</ProjectGridItem>
+		</section>
 	</BodyWrapper>
 </BasicWrapper>
 
 <style>
-	img {
-		max-width: 100%;
-		padding: 1.5rem 0rem;
+
+	.project-grid {
+		display: grid;
+		gap: 2rem;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		@media screen and (max-width: 768px) {
+			grid-template-columns: minmax(0, 1fr);
+		}
 	}
+
 </style>
