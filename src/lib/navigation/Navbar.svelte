@@ -1,14 +1,14 @@
 <script>
 	import { base } from '$app/paths';
 
-
+	// I don't want to deal with updating this any more :)
+	// 	<a href={`${base}/resume`} class="serif">Resume</a>
 	export let currentPage = 'home';
 </script>
 
 <nav class="navbar">
 	<a href={`${base}/`} class={`serif ${currentPage == 'home' ? ' current' : ''}`}>Blog</a>
 	<a href={`${base}/projects`} class={`serif ${currentPage == 'projects' ? ' current' : ''}`}>Stuff I've Made</a>
-	<a href={`${base}/resume`} class="serif">Resume</a>
 </nav>
 
 <style>

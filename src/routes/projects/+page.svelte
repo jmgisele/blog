@@ -7,7 +7,7 @@
 	import slit from '../../assets/images/double_slit.png';
 	import shel from '../../assets/images/shelmaala.png';
 	import gyopo from  '../../assets/images/gyopo.png';
-	import kobo from '../../assets/images/kobo.jpg';
+	import kobo from '../../assets/images/kobo.png';
 //	import pocketbook from '../../assets/images/pocketbook.jpg';
 	import ProjectGridItem from '../../lib/grid/ProjectGridItem.svelte';
 

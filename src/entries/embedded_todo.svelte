@@ -1,6 +1,6 @@
 <script>
-import RainbowLink from "../lib/text_styling/RainbowLink.svelte";
-
+	import RainbowLink from "../lib/text_styling/RainbowLink.svelte";
+	import kobo from '../assets/images/kobo.png';
 </script>
 
 <h1>The World Needs a Networked TODO App Running On 2011 Embedded EInk </h1>
@@ -35,7 +35,7 @@ import RainbowLink from "../lib/text_styling/RainbowLink.svelte";
 		copies the raw image over to a 2011 Kobo Ereader (aka "xtreme budget e-ink monitor") via netcat,
 	</li>
 	<li>
-		displays that image via the Kobo's built-in rendering executable, nickel,
+		displays that image via the Kobo's built-in rendering executable (which expects a raw image file at a certain location),
 	</li>
 	<li>
 		and writes to a log file for easier debugging.
@@ -47,6 +47,17 @@ import RainbowLink from "../lib/text_styling/RainbowLink.svelte";
 <p>
 	As it is, my workflow: I mark a TODO done on my phone or my computer, and ~2-4 seconds later I can see the updated status on my "e ink monitor." Because eink only uses power to change the image, and not to keep it rendered, that display sits there perfectly content on the corner of my desk in easy-line-of-sight and no-strain-of-eyes until I next update the file powering it. I'm quite pleased with this!! (And yes, it does say I'm overdue on my cat's insulin right now!)
 </p>
+<p>
+	Here's a picture of it in action. I hollowed out an Ikea picture frame, made a hole for the charging cable on the bottom, and mounted it on the wall by my desk. Note the uh sharpied-over-painters-tape over the controls....The rubber from 2011 sadly did not hold up over the years.
+</p>
+<div class="center-image-flex">
+		 <img
+			 src={kobo}
+			 alt="my kobo ereader with a basic text todo list rendered, with items categorized as Overdue/Today/Later/Done"
+			 id="kobo"
+			 class="desktop"
+			 />
+</div>
 <h3> Dreams for future development</h3>
 <p>
 	The dream would be to purchase an ereader with a touch screen (so, you know, like a 2012 one rather than my 2011 one) and figure out how to get some form of emacs or an org mode client like <RainbowLink href="https://www.orgzlyrevived.com">Orgzly Revived</RainbowLink> up on it. This is totally possible, people have <RainbowLink href="https://marek-g.github.io/posts/projects/archive/kobo_as_linux_tablet">ported ancient Debian isos</RainbowLink> onto Kobos a few models later than the one I've got. But: I'd need a device with a touchscreen. Reverse engineering a full four-button-based input system for the Kobo Wireless I've got, which does not have a touch screen and whose refresh rate and ghosting levels leave much to be desired, is not worth the pain. It is certainly beyond my current hardware and reverse-engineering skill levels to boot.
@@ -61,4 +72,15 @@ import RainbowLink from "../lib/text_styling/RainbowLink.svelte";
 </p>
 <p>It's a delight to be able to practically exploit the effects of an earlier era's "ship fast and worry about security later" ethos. It's a delight to sort out the toolchain for porting a Rust executable --- a language that was only invented in 2015! --- to a 2011 embedded device which predates the availability of even touch screens on eink. It's a TOTAL delight to uncover years of forum posts of other people idly spending their free hours poking around the corners of these devices, making similarly personal applications with similarly humble goals.
 </p>
+<style>
+	.desktop {
+		padding: 3rem 0rem;
+		max-width: 400px;
+	}
 
+	@media screen and (max-width: 768px) {
+		.desktop {
+			width:100%;
+		}
+	}
+</style>
