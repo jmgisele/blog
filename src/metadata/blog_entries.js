@@ -50,7 +50,7 @@ export const metadata = {
 		},
 		{
 			slug: 'libreoffice_quirks',
-			title: "LibreOffice on Arch doesn't install fonts by default",
+			title: "LibreOffice on Arch doesn't install fallback fonts by default",
 			description: "and sometimes stuff is weird because of that",
 			published: 'September 17, 2026 00:00:00'
 		}

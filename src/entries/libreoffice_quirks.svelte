@@ -2,7 +2,7 @@
 	import RainbowLink from "../lib/text_styling/RainbowLink.svelte";
 </script>
 
-<h1>LibreOffice on Arch doesn't install fonts by default</h1>
+<h1>LibreOffice on Arch doesn't install fallback fonts by default</h1>
 <h3>aka 'No, page size and layout should and generally do not change between versions of LibreOffice or underlying platform'</h3>
 <h4>a post in hopes I can save someone else some hours of fruitless googling</h4>
 <p>Was getting involved in a new project which happens to generate .docx files this week and came across a conundrum. The file, as opened on my machine using a recent version of LibreOffice from the Arch official repos, had a single line on a new page. Basically, it looked like it was having that issue I always have on resumes: where no matter what I do, I have a single sentence on the next page.
