@@ -17,9 +17,9 @@
 	<h1>James Gisele</h1>
 	<Navbar />
 	<p>
-		I'm a software developer currently based in Philadelphia. Professionally, I make web apps.
-		Unprofessionally, I dabble in all sorts of things. I like strong type systems,
-		designing creative frontends, and learning a little bit about a lot of things.
+		I'm a software developer. Professionally, I make web apps.
+		Unprofessionally, I dabble in all sorts of things. I like static type systems, tinkering with my emacs configuration,
+		building creative frontends, and learning a little bit about a lot of things.
 	</p>
 	<p>
 		I'm currently looking for work. Feel free to shoot me an email at

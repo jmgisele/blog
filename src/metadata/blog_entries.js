@@ -47,6 +47,12 @@ export const metadata = {
 			title: "You, Too, Could Have A Networked TODO App Running On 2011 Embedded EInk",
 			description: "And I'm here to provide.",
 			published: 'August 20, 2026 00:00:00'
+		},
+		{
+			slug: 'libreoffice_quirks',
+			title: "LibreOffice on Arch doesn't install fonts by default",
+			description: "and sometimes stuff is weird because of that",
+			published: 'September 17, 2026 00:00:00'
 		}
 	]
 };
